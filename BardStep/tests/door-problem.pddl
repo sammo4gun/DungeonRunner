@@ -9,6 +9,7 @@
         (at prince bedroom)
         (has prince key)
         (in axe armory)
+        (has evil_knight apple)
         (adjacent hallway cell)
         (adjacent hallway gatehouse)
         (adjacent hallway bedroom)
@@ -23,8 +24,10 @@
  (:bardichegoal
     (good
         (and (has knight key)
+             (has knight apple)
              (doorOpen))
         (and (has knight axe)
+             (has knight apple)
              (doorOpen))
     )
     (bad
