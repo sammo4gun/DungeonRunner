@@ -1,3 +1,0 @@
-0) (open knight)
-1) (move knight gatehouse hallway)
-2) (move knight gatehouse armory)

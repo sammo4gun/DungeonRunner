@@ -1,0 +1,2 @@
+(Final Bardiche Story (:protagonist knight)
+  (:steps (prince (move prince bedroom hallway))))
