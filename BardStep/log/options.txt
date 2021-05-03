@@ -1,0 +1,2 @@
+0) (move knight cell hallway)
+1) (take knight apple evil_knight cell)

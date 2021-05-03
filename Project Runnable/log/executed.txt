@@ -1,6 +1,0 @@
-(Final Bardiche Story (:protagonist knight)
-  (:steps (prince (move prince armory gatehouse))
-          (evil_knight (move evil_knight gatehouse armory))
-          (evil_knight (move evil_knight armory gatehouse))
-          (knight (open knight))))
-Story Over
