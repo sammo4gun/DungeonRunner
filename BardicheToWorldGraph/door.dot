@@ -1,0 +1,25 @@
+strict graph  {
+gatehouse [fillcolor=yellow, style=filled, type=location];
+bedroom [fillcolor=yellow, style=filled, type=location];
+armory [fillcolor=yellow, style=filled, type=location];
+hallway [fillcolor=yellow, style=filled, type=location];
+cell [fillcolor=yellow, style=filled, type=location];
+key [fillcolor=white, style=filled, type=object];
+axe [fillcolor=white, style=filled, type=object];
+knight [fillcolor=orange, style=filled, type=character];
+evil_knight [fillcolor=orange, style=filled, type=character];
+prince [fillcolor=orange, style=filled, type=character];
+apple;
+doorOpen [fillcolor=red, style=filled, type=statement];
+gatehouse -- hallway  [label="connected to"];
+gatehouse -- prince  [label="located in"];
+gatehouse -- armory  [label="connected to"];
+gatehouse -- evil_knight  [label="located in"];
+gatehouse -- knight  [label="located in"];
+bedroom -- hallway  [label="connected to"];
+hallway -- cell  [label="connected to"];
+key -- evil_knight  [label=has];
+key -- knight  [label=had];
+axe -- knight  [label=has];
+evil_knight -- apple  [label=has];
+}
