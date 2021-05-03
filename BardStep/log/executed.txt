@@ -1,2 +1,4 @@
 (Final Bardiche Story (:protagonist knight)
-  (:steps (knight (pickup knight axe armory))))
+  (:steps (evil_knight (move evil_knight gatehouse armory))
+          (knight (open knight))))
+Story Over

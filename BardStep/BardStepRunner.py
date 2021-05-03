@@ -9,17 +9,18 @@ def runBardStep(problem='tests/door-problem.pddl',
                 domain='tests/door-domain.pddl',
                 output = 'log/door-current.pddl'):
     if ip == None:
-        subprocess.call(['java', '-jar', 'BardStep1.0.jar',
+        subprocess.call(['java', '-jar', 'BardStep1.1.jar',
                         '-d', domain,
                         '-p', problem,
-                        '-o', output])
+                        '-o', output,
+                        '-np'])
     else:
-        print('y')
-        subprocess.call(['java', '-jar', 'BardStep1.0.jar',
+        subprocess.call(['java', '-jar', 'BardStep1.1.jar',
                         '-d', domain,
                         '-p', problem,
                         '-ip', ip,
-                        '-o', output])
+                        '-o', output,
+                        '-np'])
 
 def initialSetup():
     copyfile(   'tests/' + WORLD_NAME + '-problem.pddl',
