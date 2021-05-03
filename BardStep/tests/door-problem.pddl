@@ -1,13 +1,13 @@
 (define (problem door)
  (:domain door)
- (:objects  knight evil_knight princess - character
+ (:objects  knight evil_knight prince - character
             bedroom armory hallway cell - room)
  (:protagonist knight)
 
  (:init (at knight cell)
         (at evil_knight gatehouse)
-        (at princess bedroom)
-        (has princess key)
+        (at prince bedroom)
+        (has prince key)
         (in axe armory)
         (adjacent hallway cell)
         (adjacent hallway gatehouse)
@@ -17,7 +17,7 @@
         (intends evil_knight (not (doorOpen)))
         (intends evil_knight (has evil_knight key))
         (intends evil_knight (has evil_knight axe))
-        (intends princess (has knight key))
+        (intends prince (has knight key))
  )
 
  (:bardichegoal

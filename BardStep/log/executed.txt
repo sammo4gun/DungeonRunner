@@ -1,4 +1,2 @@
 (Final Bardiche Story (:protagonist knight)
-  (:steps (evil_knight (move evil_knight gatehouse hallway))
-          (evil_knight (move evil_knight hallway cell))
-          (evil_knight (take evil_knight key knight cell))))
+  (:steps (knight (move knight hallway gatehouse))))

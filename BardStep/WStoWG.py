@@ -62,11 +62,12 @@ def makeRelations(problem, graph):
         if pr:
             prline=line.strip().replace("(:init ", "").strip("()")
             prline=prline.split()
+            if len(prline) == 0:
+                break
             relation = prline[0]
             if relation.startswith(':'): pr = False
             if len(prline) > 1 and relation in TRANSLATION.keys():
                 i1, i2 = prline[1],prline[2]
-                print(relation)
                 graph.add_edge(i1, i2, label = TRANSLATION[relation])
             if len(prline) == 1:
                 graph.add_nodes_from([relation], type='statement', fillcolor = "red", style = 'filled')
@@ -81,9 +82,19 @@ def makeNodes(objects):
 
     return graph
 
-objects = getNodes("door-domain-sc.pddl", "door-problem-output.pddl")
-print(objects)
-g = makeNodes(objects)
-g = makeRelations("door-problem-output.pddl", g)
+def getWG(  problem = 'tests/door-problem.pddl',
+            domain = 'tests/door-domain.pddl',
+            output = 'log/graph.dot'):
+    objects = getNodes(domain, problem)
+    g = makeNodes(objects)
+    g = makeRelations(problem, g)
 
-nx.nx_pydot.write_dot(g, "door.dot")
+    nx.nx_pydot.write_dot(g, output)
+
+if __name__ == "main":
+    objects = getNodes("door-domain.pddl", "door-problem-output.pddl")
+    print(objects)
+    g = makeNodes(objects)
+    g = makeRelations("door-problem-output.pddl", g)
+
+    nx.nx_pydot.write_dot(g, "door.dot")

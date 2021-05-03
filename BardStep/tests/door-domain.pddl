@@ -3,7 +3,7 @@
  (:types item character room)
  (:constants axe key apple - item
              gatehouse - room)
- 
+
  (:predicates (has ?character - character ?item - item)
               (had ?character - character ?item - item)
               (at ?character - character ?room - room)
@@ -11,17 +11,17 @@
               (adjacent ?room - room ?neighbor - room)
               (doorOpen)
   )
- 
+
  (:action move
    :parameters      (?character - character ?from - room ?to - room)
-   :precondition    (and (at ?character ?from) 
+   :precondition    (and (at ?character ?from)
                          (adjacent ?from ?to)
                          (not (= ?from ?to)))
    :effect          (and (not (at ?character ?from))
                          (at ?character ?to))
    :agents          (?character)
    :initiator       (?character))
-    
+
   (:action give
     :parameters     (?giver - character ?item - item ?receiver - character ?room - room)
     :precondition   (and (not (= ?giver ?receiver))
@@ -33,7 +33,7 @@
                          (has ?receiver ?item))
     :agents         (?giver ?receiver)
     :initiator      (?giver))
-    
+
   (:action take
     :parameters     (?taker - character ?item - item ?victim - character ?room - room)
     :precondition   (and (not (= ?taker ?victim))
@@ -45,7 +45,7 @@
                          (has ?taker ?item))
     :agents         (?taker)
     :initiator      (?taker))
-    
+
   (:action pickup
     :parameters     (?character - character ?item - item ?room - room)
     :precondition   (and (at ?character ?room)
@@ -55,7 +55,7 @@
                          (has ?character ?item))
     :agents         (?character)
     :initiator      (?character))
-    
+
   (:action open
     :parameters     (?character - character)
     :precondition   (and (at ?character gatehouse)
@@ -65,12 +65,12 @@
     :effect         (doorOpen)
     :agents         (?character)
     :initiator      (?character))
-    
+
   (:axiom
     :vars           (?room - room ?neighbor - room)
     :context        (adjacent ?room ?neighbor)
     :implies        (adjacent ?neighbor ?room))
-                         
+
   (:axiom
     :vars           (?character - character ?item - item)
     :context        (has ?character ?item)
