@@ -68,7 +68,10 @@ def makeRelations(problem, graph):
             if relation.startswith(':'): pr = False
             if len(prline) > 1 and relation in TRANSLATION.keys():
                 i1, i2 = prline[1],prline[2]
-                graph.add_edge(i1, i2, label = TRANSLATION[relation])
+                e = (i1, i2, {"label": 'has'})
+                l = TRANSLATION[relation]
+                if not (l == 'had' and (graph.has_edge(*e[:2]))):
+                    graph.add_edge(i1, i2, label = TRANSLATION[relation])
             if len(prline) == 1:
                 graph.add_nodes_from([relation], type='statement', fillcolor = "red", style = 'filled')
     p.close()

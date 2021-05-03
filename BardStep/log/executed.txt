@@ -1,2 +1,2 @@
 (Final Bardiche Story (:protagonist knight)
-  (:steps (knight (move knight hallway gatehouse))))
+  (:steps (knight (pickup knight axe armory))))

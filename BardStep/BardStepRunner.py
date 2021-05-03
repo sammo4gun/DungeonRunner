@@ -54,8 +54,6 @@ while True:
         takeAction(action)
         getRecentWorldState()
 
-#fetch world state and convert it to WG
-
 #fetch next options
 
 #fetch executed steps

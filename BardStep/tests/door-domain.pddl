@@ -59,9 +59,9 @@
   (:action open
     :parameters     (?character - character)
     :precondition   (and (at ?character gatehouse)
+                         (has ?character apple)
                          (or (has ?character key)
-			     (has ?character apple)
-			     (has ?character axe)))
+			                      (has ?character axe)))
     :effect         (doorOpen)
     :agents         (?character)
     :initiator      (?character))
